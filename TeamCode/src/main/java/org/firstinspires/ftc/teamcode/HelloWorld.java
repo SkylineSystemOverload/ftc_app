@@ -11,10 +11,10 @@ public class HelloWorld extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
-    public DcMotor motor1 = null;
-    public DcMotor motor2 = null;
-    public DcMotor motor3 = null;
-    public DcMotor motor4 = null;
+    public DcMotor motor1;
+    public DcMotor motor2;
+    public DcMotor motor3;
+    public DcMotor motor4;
 
     @Override
     public void runOpMode() {
@@ -36,7 +36,7 @@ public class HelloWorld extends LinearOpMode {
         motor3.setDirection(DcMotor.Direction.FORWARD);
         motor4.setDirection(DcMotor.Direction.REVERSE);
 
-        double X2 = 0, Y1 = 0, X1 = 0, threshold = 15;
+        double X2 , Y1 , X1 , threshold = 15;
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
