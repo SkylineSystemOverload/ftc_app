@@ -5,10 +5,11 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 @TeleOp(name="HelloWorld", group="Linear Opmode")
+@Disabled
 public class HelloWorld extends LinearOpMode {
-
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
     public DcMotor motor1;
@@ -65,6 +66,26 @@ public class HelloWorld extends LinearOpMode {
             motor4.setPower(Y1 - X2 + X1);
             motor1.setPower(Y1 + X2 + X1);
             motor3.setPower(Y1 + X2 - X1);
+
+            /*//drive forwards methods for auto later
+            public void DriveForward(double power)
+            {
+                motor1.setPower(power);
+                motor2.setPower(power);
+                motor3.setPower(power);
+                motor4.setPower(power);
+            }
+
+            public void Drivebackward(double -power)
+            {
+                motor1.setPower(power);
+                motor2.setPower(power);
+                motor3.setPower(power);
+                motor4.setPower(power);
+            }
+            //Drive Forward
+            DriveForward(1);
+            sleep(4000);*/
 
             // Show the elapsed game time and wheel power.
             telemetry.addData("Status", "Run Time: " + runtime.toString());
